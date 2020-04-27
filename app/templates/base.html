@@ -1,0 +1,24 @@
+{% extends 'bootstrap/base.html'%}
+
+<!-- Navbar block  --> 
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> www.60BeansOut </title>
+        {% endif %}
+    </head>
+    <body>
+        <!-- Content block -->
+
+        {% block content %}
+
+        {% endblock%}
+    </body>
+</html>

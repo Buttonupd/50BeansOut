@@ -1,0 +1,24 @@
+
+h3 {
+    color: darkred;
+    font-family: monospace;
+    font: outline;
+    font-weight: bold;
+    align-items: center;
+}
+
+ul {
+    align-items: center;
+    scrollbar-darkshadow-color: darksalmon;
+    cursor: grabbing;
+    background-position: center;
+    text-align: center;
+    justify-content: flex-start;
+    background-color: black;
+    color: darkorange;
+    
+}
+
+.col-md-3 {
+    color: black;
+}

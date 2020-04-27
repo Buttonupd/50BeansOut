@@ -1,0 +1,56 @@
+{% macro displaySourceList(source_list) %}
+{% macro displayReviews(review_list) %}
+    {% for review in review_list %}
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
+        <h2> {{ review.title}} </h2>
+        <p> {{ review.review | truncate(30) }}</p>
+    </div>
+    {% endfor %}
+{% endmacro %}
+        
+            <div class="card-body">
+                {% for source in source_list %}
+                <div class="card-content">
+                    <div class="card-title">
+                        <h4><a href="{{source.url}}">{{ source.name}}</a></h4>  
+                    </div>
+                    <div class="card-content">
+                            <p>{{source.description}}</p>
+                    </div>
+                    <diV class="">
+                        <P><a href="/articles/{{source.id}}">Trending...</a></P>
+                    </diV>
+                </div>
+                
+                {% endfor %}
+ 
+                
+            </div>
+{% endmacro %}
+
+{% macro display_Source_articles(source_articles_list) %}
+<div class="container" id="articles">
+    <div class="row" >
+        {% for article in source_articles_list %}
+            <div class="col-sm-4">
+                <div class="card info">
+                    <img src="{{article.urlToImage}}" alt="{{article.title}}" class="card-img">
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="card info">
+                    <div class="card-header title"><h4>{{article.source.name}}</h4> </div>
+                    <div class="card-body">
+                        <p class="desc">{{article.description}}</p>
+                        
+                        <div>
+                            <p>posted:{{article.publishedAt|truncate(13)}}</p>
+                        </div>
+                        
+
+                        <p><a href="{{article.url}}">Read More....</a></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endmacro %}       
